@@ -18,7 +18,7 @@ public interface BookMapper {
             return null;
         }
 
-        BookEntity bookEntity = new BookEntity();
+        var bookEntity = new BookEntity();
 
         bookEntity.setTitle(bookRequest.getTitle());
         bookEntity.setAuthor(bookRequest.getAuthor());
@@ -32,27 +32,6 @@ public interface BookMapper {
 
     BookResponse buildBookResponse(BookEntity bookEntity);
 
-<<<<<<< HEAD
-    default List<BookEntity> buildBookEntities(List<BookRequest> bookRequests, UserRepository userRepository) {
-        if (bookRequests == null) {
-            return null;
-        }
-
-        List<BookEntity> bookEntities = new ArrayList<>();
-
-        for (BookRequest bookRequest : bookRequests) {
-            if (bookRequest != null) {
-                Optional<UserEntity> userEntityOptional = userRepository.findById(bookRequest.getUserId());
-                BookEntity bookEntity = buildBookEntity(bookRequest, userEntityOptional);
-                bookEntities.add(bookEntity);
-            }
-        }
-
-        return bookEntities;
-    }
-
-=======
->>>>>>> a363a8b (first commit)
     List<BookResponse> buildBookResponses(List<BookEntity> entityList);
 }
 

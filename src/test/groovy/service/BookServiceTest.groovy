@@ -1,4 +1,4 @@
-package com.alinazim.bookexchange.service
+package service
 
 import com.alinazim.bookexchange.dao.entity.BookEntity
 import com.alinazim.bookexchange.dao.entity.UserEntity
